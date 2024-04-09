@@ -31,3 +31,28 @@ var lista = [
     }
    ]
    
+controller.getAll = (req, res)=>{
+    res.status(200).send(lista)
+}
+
+controller.getID = (req, res)=>{
+    item = lista.find(i => i.id == req.params.id)
+}
+
+controller.createNew = (req,res)=>{
+    const novoDado = req.body
+    novoDado.id = indice + 1
+    lista.push(novoDado)
+    res.status(200).redirect("/")
+}
+
+controller.updateData = (req,res)=>{
+    dado = lista.findIndex(p => p.id == req.params.id)
+    console.log(dado)
+}
+
+controller.deleteData = (req,res)=>{
+    const pessoaIndice = lista.findIndex(p => p.id == req.params.id)
+}
+
+module.exports = controller
