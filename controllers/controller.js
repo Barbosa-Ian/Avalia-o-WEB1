@@ -52,7 +52,7 @@ controller.updateData = (req,res)=>{
 }
 
 controller.deleteData = (req,res)=>{
-    const pessoaIndice = lista.findIndex(p => p.id == req.params.id)
+    const novoDado = lista.findIndex(p => p.id == req.params.id)
 }
 
 module.exports = controller
